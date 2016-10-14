@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity" >
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_fab"
+        android:src="@drawable/my_location"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/btnMenu"
+            android:src="@drawable/menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"/>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/btnSwap"
+            android:src="@drawable/swap"
+            android:layout_alignParentRight="true"
+            android:layout_width="32dp"
+            android:layout_height="32dp"/>
+
+        <TableLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@id/btnMenu"
+            android:layout_toLeftOf="@id/btnSwap"
+            android:layout_height="wrap_content">
+
+            <TableRow android:layout_width="match_parent">
+                <TextView
+                    android:text="Từ: "
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16dp"/>
+                <EditText
+                    android:hint="Chọn điểm đi"
+                    android:textColorHint="@color/textColorHint"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Đến: "
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16dp"/>
+                <EditText
+                    android:hint="Chọn điểm đến"
+                    android:textColorHint="@color/textColorHint"/>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
